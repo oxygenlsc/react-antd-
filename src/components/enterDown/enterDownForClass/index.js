@@ -1,3 +1,12 @@
+/**
+ * 
+ * @param {回车事件源} e 
+ * @param {获取dom的css选择器} selectStr 
+ * @param {当前的位置名字的字符串，state里面自己写的暂存的} placeNname 
+ * @param {当前暂存位置的数值} curi 
+ * @param {this.setState} setcuri 
+ */
+
 export const EnterMethod = (e,selectStr,placeNname,curi,setcuri) => {
     if (e.keyCode == 13) {
         const changes = document.querySelectorAll(selectStr);
@@ -36,10 +45,16 @@ export const EnterMethod = (e,selectStr,placeNname,curi,setcuri) => {
         }
     }
 }
+/**
+ * 
+ * @param {获取dom的css选择器} selectStr 
+ * @param {当前的位置名字的字符串，state里面自己写的暂存的} placeNname 
+ * @param {在类组件中是this.setState,函数组件中是statehooks} setcuri 
+ * @param {boolean值，true代表绑定事件，false代表取消事件} isbind 
+ */
 export const bindAndCancelClickMethod = (selectStr,placeNname,setcuri,isbind) =>{
     const changes = Array.from(document.querySelectorAll(selectStr)) ;
     if(isbind){
-        console.log(123);
         changes.forEach((el,i)=>{
             el.onclick = ()=>{
                 if(i>=changes.length-1){

@@ -1,3 +1,12 @@
+/**
+ * 
+ * @param {回车事件源} e 
+ * @param {获取dom的css选择器} selectStr 
+ * @param {当前暂存位置的数值} curi 
+ * @param {statehooks} setcuri 
+ * 
+ * 
+ */
 export const EnterMethod = (e,selectStr,curi,setcuri) => {
     if (e.keyCode == 13) {
         const changes = document.querySelectorAll(selectStr);
@@ -35,6 +44,12 @@ export const EnterMethod = (e,selectStr,curi,setcuri) => {
         }
     }
 }
+/**
+ * 
+ * @param {获取dom的css选择器} selectStr 
+ * @param {statehooks} setcuri 
+ * @param {boolean值，true代表绑定事件，false代表取消事件} isbind 
+ */
 export const bindAndCancelClickMethod = (selectStr,setcuri,isbind) =>{
     const changes = Array.from(document.querySelectorAll(selectStr)) ;
     if(isbind){

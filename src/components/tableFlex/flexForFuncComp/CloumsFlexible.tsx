@@ -35,6 +35,11 @@ export const handleResize = (setCloums,newCloum,index) => (e, { size }) => {
   }
   setCloums(nextColumns) 
 };
+/**
+ * 
+ * @param setCloums  hooks的设置函数
+ * @param newCloum  存储表头的state hooks
+ */
 export const columns = (setCloums,newCloum)=>{
   return newCloum.map((col, index) => ({
     ...col,

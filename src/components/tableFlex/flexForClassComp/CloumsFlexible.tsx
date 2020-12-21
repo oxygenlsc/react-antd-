@@ -36,6 +36,12 @@ const handleResize = (context,index,columnName,state) => (e, { size }) => {
       return { [columnName]: nextColumns };
     });
   };
+/**
+ * 
+ * @param state  当前的state this.state
+ * @param columnName  放在state中的表头的名字
+ * @param context  当前环境的this
+ */
 export const columns = (state,columnName,context)=>{
    return state[columnName].map((col, index) => ({
         ...col,
