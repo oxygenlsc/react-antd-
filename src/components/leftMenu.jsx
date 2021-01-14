@@ -37,9 +37,9 @@ export default function LeftMenu() {
           />
         </div>
         
-        <Menu theme="dark" mode="inline"  className='scroll-box' style={{height:'90vh',overflow:'auto'}}>
-        <Menu.Item key={-1} >
-        <Link to={'/DirectoryOverview'} style={{overflow:'hidden',whiteSpace:'nowrap',textOverflow:'ellipsis'}} >
+        <Menu theme="dark"  mode="inline"  className='scroll-box' style={{height:'90vh',overflow:'auto'}}>
+        <Menu.Item key={'-1'} >
+        <Link to={'/'} style={{overflow:'hidden',whiteSpace:'nowrap',textOverflow:'ellipsis'}} >
         <Icon type="menu" /> {'目录概述'}
         </Link>
         </Menu.Item>

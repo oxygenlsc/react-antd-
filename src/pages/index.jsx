@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import EchartBox from '../components/menuPageComponent/echarBox'
+import FlowItem from '../components/menuPageComponent/flowItemBox'
 
-
-export default class index extends Component {
-  render() {
+export default function DirectoryOverview(props) {
     return (
-      <h1></h1>
+        <div className='menu-page-container' style ={{display:'flex'}}>
+            <EchartBox/>
+            <FlowItem/>
+        </div>
     )
-  }
 }
