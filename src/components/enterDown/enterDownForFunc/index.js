@@ -14,24 +14,8 @@ export const EnterMethod = (e,selectStr,curi,setcuri) => {
             return
         }
         if (changes[curi]?.tagName == 'DIV') {
-            if (curi > changes.length - 1){
-                if (e.srcElement.getAttribute('autocomplete') == 'off') {
-                    changes[0].click()
-                    setcuri(0)
-                } else {
-                    changes[1].focus()
-                    setcuri(1)
-                }
-                return
-            }
-            if (e.srcElement.getAttribute('autocomplete') == 'off') {
-                changes[curi + 2].focus()
-                setcuri(curi + 2)
-            } else {
-                changes[curi].click()
-                setcuri(curi+1)
-            }
-            
+            changes[curi].click()
+            setcuri(curi+1)
         } else {
             if (curi > changes.length - 1){
                 changes[0].focus()

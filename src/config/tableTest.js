@@ -88,14 +88,14 @@ export const tableColumsOne  = [
         dataIndex: 'batch_number',
         ellipsis: true,
         width: 100,
-        render:(text)=>{
-            return <Select  className='focus-dom' style = {{width:'100%'}}>
-                <Option key = {1} value = {1}> 1</Option>
-                <Option key = {2} value = {2}> 2</Option>
-                <Option key = {3} value = {3}>3</Option>
-                <Option key = {4} value = {4}> 4</Option>
-            </Select>
-        }
+        // render:(text)=>{
+        //     return <Select  className='focus-dom' style = {{width:'100%'}}>
+        //         <Option key = {1} value = {1}> 1</Option>
+        //         <Option key = {2} value = {2}> 2</Option>
+        //         <Option key = {3} value = {3}>3</Option>
+        //         <Option key = {4} value = {4}> 4</Option>
+        //     </Select>
+        // }
     },
 ]
 export const tableOneMockData = [
