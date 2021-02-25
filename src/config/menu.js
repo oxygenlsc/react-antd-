@@ -30,6 +30,13 @@ export const menuArr = [
         time:'2021/1/14',
         des:`产生原因还是觉得上面两个的方法的使用还是有一些麻烦所以就封装了一个高级组件以简化用户的使用,需要传入2个参数一个是组件，第二个是类名 `
     },
+    {
+        title:'echarts测试练手',
+        url:'/echartsTest',
+        author:'黎思成',
+        time:'2021/2/25',
+        des:`之后要自己写临床路径监控页面，因为有大量的图表所以就先提前来实验一下`
+    },
 ]
 
 export const EchartOneOption = (menuArr)=>{
@@ -88,3 +95,93 @@ export const EchartOneOption = (menuArr)=>{
 function uniqueArr(arr){
     return Array.from(new Set(arr))
 }
+
+
+
+
+export const testOptions = ( {
+    title: {
+        show: true,
+        text: "企业数量", //主标题
+        subtext: 500, //副标题：企业数量值，此处用标题方式来显示
+        left: "30%",
+        top: "40%", 
+        z: 0,
+        zlevel: 100,
+        textStyle: { //设置主标题的 样式
+          textAlign: "center",
+          color: "rgba(145,213,255,0.85)",
+          fontSize: 14
+        },
+        subtextStyle: { //设置副标题的样式
+          textAlign: "center",
+          color: "#000",
+          fontSize: 30,
+          fontWeight: 600
+        }
+      },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{b} <br> {c}人 ({d}%)',
+        show:true,
+        backgroundColor:'rgba(0,0,0,0.7)',
+        textStyle:{
+            color:'#fff'
+        }
+    },
+    // legend: {
+    //     show:false,
+    //     orient: 'vertical',
+    //     align: 'left',
+    //     right:'0', 
+    //     bottom:'25%',
+    //     icon:'circle',
+    //     // padding:50,
+    //     data: [{
+    //         value:203,name:'中止人数'
+    //     },{
+    //         value:123,name:'完成人数'
+    //     },{
+    //         value:123,name:'执行中人数'
+    //     }]
+    // },
+    series: [
+        {
+            name: '入径总人数',
+            type: 'pie',
+            radius: ['40%', '60%'],
+            center: ['35%', '50%'],
+            itemStyle: {
+                normal: {
+                color: function(params) {
+                        //自定义颜色
+                        var colorList = [
+                           '#E76C6C','#77D286', '#4DB3BD'
+                        ];
+                        return colorList[params.dataIndex]
+                    }
+                }
+            },
+            data:[{
+                value:203,name:'中止人数'
+            },{
+                value:123,name:'完成人数'
+            },{
+                value:123,name:'执行中人数'
+            }],
+            label: {
+                normal: {
+                    show: true,
+                    position: "center", //文字显示在中间
+                    align: "center", 
+                    verticalAlign: "middle",
+                    textStyle: {
+                      //设置文字样式
+                      fontSize: "0"
+                    }
+                  },
+            },
+        }
+    ]
+})
+
