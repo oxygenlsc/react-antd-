@@ -51,6 +51,24 @@ export default function  Index(props) {
         }
         // 绘制图表，option设置图表格式及源数据
         myChart.setOption(option);
+        //自定义事件，当鼠标移动上是，则设置 title 不显示
+        myChart.on("mouseover", params => {
+            myChart.setOption({
+            title: {
+                show: false 
+            },
+            });
+        });
+
+        //自定义事件
+        myChart.on("mouseout", params => {
+            myChart.setOption({
+            title: {
+                show: true  //当鼠标移出 饼图区域时，则打开 title显示
+            }
+            });
+        });
+
     }
     return (
         <div className = 'pie-content'>
@@ -62,11 +80,11 @@ export default function  Index(props) {
                     {
                         rightMsgArr?.map((el,i)=> <RightMsgItem 
                             key = {i}
-                            isbolid
-                            spotColor='blue' 
-                            lineOneText = {'第一次dddddddd'} 
-                            lineTwoText = {'2077777'}
-                            lineTwoInnerText = {'50%'}
+                            isbolid = {el.isbolid}
+                            spotColor={el.spotColor} 
+                            lineOneText = {el.lineOneText} 
+                            lineTwoText = {el.lineTwoText} 
+                            lineTwoInnerText = {el.lineTwoInnerText} 
                             />)
                     }
                 </div>:null}
