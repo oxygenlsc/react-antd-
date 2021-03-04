@@ -1,7 +1,6 @@
 import React from 'react'
 import PieEchart from '../components/ECharts/pieCharts'
 import LineEchart from '../components/ECharts/lineCharts'
-
 export default function echartsTest() {
     const datas = [{
         value:203,name:'中止人数',percent:'10%'
@@ -75,10 +74,14 @@ function dealOption(pieName,unit,pieData,pieColor){
         tooltip: {
             trigger: 'item',
             formatter: `{b} <br> {c}${unit} ({d}%)`,
+            // formatter:(parms,ww,mm)=>{
+            //     console.log(parms,ww,mm,'sss');
+            // },
             show:true,
             backgroundColor:'rgba(0,0,0,0.7)',
             textStyle:{
-                color:'#fff'
+                color:'#fff',
+                align:'left'
             }
         },
         series: [
@@ -170,11 +173,30 @@ function dealLineOption(){
             text: '路径趋势'
         },
         tooltip: {
-            trigger: 'axis'
+            formatter:function(params) {
+                var date = new Date();
+                let str = date.getFullYear()+'年'
+                params.forEach((el,i) => {
+                    if(i==0){
+                        str +=el.axisValue+'<br>' + el.marker + el.seriesName +'&nbsp;&nbsp;&nbsp;'+ el.data +'<br>'
+                    }else{
+                        str += el.marker + el.seriesName +'&nbsp;&nbsp;&nbsp;'+ el.data +'<br>'
+                    }
+                   
+                });
+                return str
+            },
+            trigger: 'axis',
+            textStyle:{
+                color:'#fff',
+                fontSize:12,
+                align:'left'
+           },
+            backgroundColor:'rgba(0,0,0,0.5)',
         },
         legend: {
             data: ['匹配数', '入径数', '完成数', '中止数', '变异数'],
-            left:'right'
+            left:'right',
         },
         grid: {
             left: '3%',
@@ -200,7 +222,7 @@ function dealLineOption(){
                 name: '匹配数',
                 type: 'line',
                 // stack: '总量',
-                data: [120, 132, 101, 134, 90, 230, 210,150, 232, 201, 154, 190, 330, 410]
+                data: [120, 132, 101, 134, 90, 230, 210,150, 232, 201, 154, 190, 330, 410],
             },
             {
                 name: '入径数',

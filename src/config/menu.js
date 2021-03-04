@@ -37,6 +37,13 @@ export const menuArr = [
         time:'2021/2/25',
         des:`之后要自己写临床路径监控页面，因为有大量的图表所以就先提前来实验一下`
     },
+    {
+        title:'hooks教学demo',
+        url:'/hooksLearn',
+        author:'黎思成',
+        time:'2021/3/3',
+        des:`领导让我带学妹把hooks搞会，写的demo`
+    },
 ]
 
 export const EchartOneOption = (menuArr)=>{
